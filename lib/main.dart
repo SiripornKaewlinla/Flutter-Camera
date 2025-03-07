@@ -31,7 +31,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
-  // ฟังก์ชันสำหรับเปลี่ยนหน้า
+  
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -99,14 +99,14 @@ class _CameraPageState extends State<CameraPage> {
   Future<void> _takePhoto() async {
     await _requestPermission();
 
-    // เลือกแหล่งที่มาของกล้องที่ถูกต้อง
+    
     final camera = isFrontCamera ? ImageSource.camera : ImageSource.camera;
 
     final XFile? image = await _picker.pickImage(
       source: camera,
       preferredCameraDevice: isFrontCamera
           ? CameraDevice.front
-          : CameraDevice.rear, // แก้ไขตรงนี้เพื่อใช้กล้องหน้าและกล้องหลัง
+          : CameraDevice.rear, 
     );
 
     if (image != null) {
